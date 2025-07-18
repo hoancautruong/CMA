@@ -74,7 +74,7 @@
         occupation: form.occupation.value.split(",").map(e => e.trim())
       };
 
-      fetch("https://script.google.com/macros/s/AKfycby2Y0NLAJPti5-GGnlZEh9IXxcCZsdb5UsiSgGu64IsQxHDqxdX1Cavq-y1V1ZhcKYDKA/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbx_dotrr3oEW2qAeQiagM6cJmmTJ1ircwL0O9HzLFeXGlYvwqRn2VjIh1u3zzKZfonluQ/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
