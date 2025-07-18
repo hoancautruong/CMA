@@ -183,7 +183,7 @@
         occupation: Array.from(form.querySelectorAll('input[name="occupation"]:checked')).map(e => e.value)
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbztZo1W-_apnp-sXjfVLXdwcWWJVY86abE_WfeUUsxuDaLNM4eWdAIDgSg8rEeLBjxZ6Q/exec", {
+      fetch("https://script.google.com/macros/s/AKfycby2Y0NLAJPti5-GGnlZEh9IXxcCZsdb5UsiSgGu64IsQxHDqxdX1Cavq-y1V1ZhcKYDKA/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
