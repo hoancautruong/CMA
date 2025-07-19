@@ -3,34 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Phiếu đăng ký hội viên</title>
+  <title>Form đăng ký</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
+      background-color: #f0f0f0;
       height: 100%;
-      background-color: #f9f9f9;
+      overflow: hidden;
     }
 
     iframe {
       border: none;
       width: 100vw;
-      height: 100vh;
+      height: 100dvh; /* dùng 100dvh cho trình duyệt mới hỗ trợ */
       display: block;
     }
 
-    @supports (padding: max(0px)) {
-      body {
-        padding-bottom: env(safe-area-inset-bottom);
+    #form-container {
+      width: 100%;
+      height: 100vh; /* fallback */
+    }
+
+    @supports (height: 100dvh) {
+      #form-container {
+        height: 100dvh;
       }
     }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://script.google.com/macros/s/AKfycbx8dJc72gxRpmntcM0K4ry1mb2xSW0Jl3p5YQvN5GIIe6A5xIaGJnlO8vQC4txV86Zvag/exec"
-    allowfullscreen
-    scrolling="yes">
-  </iframe>
+  <div id="form-container">
+    <iframe id="form-frame" src="https://script.google.com/macros/s/AKfycbxxxxxxxxxxxxxxxxxxxxxxx/exec" allowfullscreen scrolling="yes"></iframe>
+  </div>
+
+  <script>
+    // Fallback: dùng JavaScript để gán chiều cao thật sự
+    function resizeIframe() {
+      const vh = window.innerHeight;
+      document.getElementById("form-frame").style.height = vh + "px";
+    }
+
+    window.addEventListener("load", resizeIframe);
+    window.addEventListener("resize", resizeIframe);
+  </script>
 </body>
 </html>
